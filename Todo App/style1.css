@@ -1,0 +1,201 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Jost", sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url("./images/background.png")
+    no-repeat center center / cover;
+    background-attachment: fixed;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+    height: 100%;
+}
+.todo-app{
+    padding: 2rem;
+    display: flex;
+    width: 100%;
+    max-width: 450px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 30px;
+    color: #fff;
+    border-radius: 20px;
+    box-shadow: 0 0 100px rgba(0,0,0,0.5);
+    border: 3px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.input-area {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.input-area input{
+    flex: 1;
+    padding: 5px 10px;
+    font-size: 1rem;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    background: rgba(200, 100, 61, 0.5);
+    color: #dbdbdb;
+}
+
+.input-area input::placeholder{
+    color: #ffff;
+}
+
+.input-area button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    padding: 10px;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1rem;
+    background-color: rgba(255, 150, 200, .1);
+    border: 5px solid rgba(255, 255, 255, .8);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-area button:hover{
+    transform: scale(1.1);
+    background: black;
+}
+
+.empty-image {
+    width: 300px;
+    max-width: 100%;
+    opacity: .8;
+    margin-top: 10px;
+
+}
+
+.todos-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#task-list li {
+    display: flex;
+    align-items: center;
+    background: rgba(105, 170, 255, 0.4);
+    margin-bottom: 15px;
+    padding: 10px 14px;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #fff;  
+    width: 100%;
+    gap: 12px;
+}
+
+#task-list li:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+#task-list li .checkbox{
+    min-width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.3s ease;     
+}
+
+.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+    filter: grayscale(1);
+}
+
+#task-list li span {
+    cursor: pointer;
+    margin: 0 40px;
+}
+
+#task-list li span:first-child {
+    color: #7CFC00;
+    flex-shrink: 0;
+}
+
+#task-list li span:last-child {
+    color: #FF4C4C;
+    flex-shrink: 0;
+}
+#task-list li {
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    gap: 20px;
+}
+
+#task-list li span:active {
+    transform: scale(0.85);
+}
+
+/* Action buttons (check & delete) */
+#task-list li span {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 25px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.2s ease, transform 0.1s ease;
+}
+/* Check button */
+#task-list li span:first-child {
+    background: rgba(0, 255, 0, 0.15);
+    color: #7CFC00;
+}
+
+/* Delete button */
+#task-list li span:last-child {
+    background: rgba(255, 0, 0, 0.15);
+    color: #FF4C4C;
+}
+
+#task-list li span:hover {
+    transform: scale(1.1);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+#task-list li span:active {
+    transform: scale(0.9);
+}
+
+#task-list li span:nth-child(2) {
+    /* flex: 1; */
+    border: none;
+    padding: 2px 5px;
+    font-size: 1rem;
+    color: #fff;
+    white-space: nowrap;
+    /* overflow: hidden; */
+    text-overflow: ellipsis;
+}
